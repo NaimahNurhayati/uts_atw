@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-warning navbar-light">
+<nav class="main-header navbar navbar-expand navbar-light" style="background-color:	#B22222;">
   <!-- Left navbar links -->
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -21,8 +21,16 @@
   <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#" style="color: lavender;">
-        Administrator
-        <i class="fas fa-user"></i></a>
+        <p>
+          @if(Auth::check())
+          {{request()->user()->nama}}
+          @else
+          Silahkan Login
+          @endif
+          <i class="fas fa-user"></i>
+        </p>
+
+      </a>
       </a>
       <div class="dropdown-menu dropdown-menu-right">
         <a href="#" class="dropdown-item">
